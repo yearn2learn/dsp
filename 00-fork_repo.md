@@ -1,7 +1,7 @@
 You have two options to complete parts 1-3 (Install, Editors, Command Line).  
 
 Option 1:  _Beginner:_ Edit markdown files directly on GitHub.  (Follow the instructions below).  
-Option 2:  _Intermediate:_ Edit files using GitHub pull/pull.  Follow "Set Up Repo on GitHub" [Step 4: Set up repo ](04-set_up_repo.md)
+Option 2:  _Intermediate:_ Edit files using GitHub push/pull.  Follow "Set Up Repo on GitHub" [Step 4: Set up repo ](04-set_up_repo.md)
 
 The process below is designed to be accessible to anyone regardless of background in `git`. 
 
@@ -55,6 +55,6 @@ Here's your first chance to practice this:
 
 What is your favorite [emoji](http://www.emoji-cheat-sheet.com/)?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> :earth_americas:
 
 
