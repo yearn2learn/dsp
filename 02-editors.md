@@ -6,7 +6,7 @@ Computing's interface is text. To work effectively, you need to be fluent with t
 
 ### Typing
 
-It may sound silly, but [make sure](http://www.typingtest.com/) you know how to type. You should be comfortable typing with perfect accuracy at 60 words per minute, at least. If you currently can't, practice until you can.
+It may sound silly, but [make sure](http://www.typingtest.com/) you know how to type. You should be comfortable typing with perfect accuracy at 60 words per minute, at least. If you currently can't, [practice](http://www.keybr.com/) until you can.
 
 A lot of your work will be done in a text editor. You have to know how to use your editor. Any editor will work, but knowing a powerful editor well will make you faster, more comfortable, and more effective.
 
@@ -59,7 +59,8 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+  I will be using Emacs since it seems to be more efficient than Vim since you don't have to keep switching modes and enables the user to easily do so much more. This [online thread](http://unix.stackexchange.com/questions/986/what-are-the-pros-and-cons-of-vim-and-emacs) helped me decide by laying out the differences in usability and features.
+
 
 --
 
@@ -67,6 +68,26 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+  I have been using Sublime a lot in the past, however, I want to try using Atom as it is relatively similar to Sublime as well as open source. Some great features of Atom are auto-completion, multiple panes, markdown preview, lots of cool packages including the ability to use terminal inside the editor (using terminal-plus package). Using such packages enables you to customize it exactly to your liking.
 
+Shortcuts:  
+Ctrl - p          -> Opens the Fuzzy Finder palette in which you can search and open files
+
+Ctrl - Shift - m	 -> Previews the file in the Markdown format
+
+Ctrl - Shift - d  -> Duplicates the line of the current cursor position and creates a new line under it with the same contents
+
+Ctrl - up/down    -> Moves the contents of the current cursor position up/down one line. If there is a line above/below with content, the current lines content will swap with the one above/below it.
+
+Ctrl - l          -> Selects the entire line the cursor's current position is in
+
+Ctrl - /          -> Toggles the selected text into a comment of the current grammar
+
+Ctrl - Alt - .    -> Complete bracket
+
+Alt - g, then d   -> Toggle list of diffs in file
+
+Packages:  
+https://atom.io/packages/merge-conflicts  
+https://atom.io/packages/terminal-plus
  
