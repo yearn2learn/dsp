@@ -20,7 +20,21 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Sets and lists both allow for `x in set`, `len(set)`, and `for x in set`. Also, as long as the set is not a `frozenset`, both sets and lists can be changed, for instance, by adding or removing elements. However, there are many differences between sets and lists. Sets are unordered, cannot contain any duplicates, the elements in a set must be hashable, and can use operations such as intersection, union, difference, and symmetric difference.
+
+>> Regarding performance, finding an element in a set can be, and usually is, much faster than in a list. However, in a worst case scenario they can be the same as stated in [this wiki](https://wiki.python.org/moin/TimeComplexity) on time complexity.
+
+Examples:
+```python
+>>> a = [1,1,2,3,3,3,4]
+>>> b = [2,4,5,5]
+>>> list(a) 
+[1, 1, 2, 3, 3, 3, 4]  # Notice the duplicates in the list
+>>> set(a) 
+set([1, 2, 3, 4]) # No more duplicates since now a set
+>>> set(a).symmetric_difference(set(b)) 
+set([1, 3, 5])  # Outputs differences between both lists
+```
 
 ---
 
@@ -28,7 +42,22 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> `Lambda` is a simple way of creating an easy function. Usually is very short and is not given a name since it is only being used in that instance as part of another function.
+
+Example:
+```python
+>>> simpsons_family = [
+  ['Homer', 38],
+  ['Maggie', 1],
+  ['Lisa', 8],
+  ['Marge', 34],
+  ['Bart', 10]
+]
+>>> simpsons_family
+[['Homer', 38], ['Maggie', 1], ['Lisa', 8], ['Marge', 34], ['Bart', 10]]
+>>> sorted(simpsons_family, key=lambda x: x[1]) 
+[['Maggie', 1], ['Lisa', 8], ['Bart', 10], ['Marge', 34], ['Homer', 38]]  # Sorted by age from youngest to oldest
+```
 
 ---
 
@@ -36,7 +65,16 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions make a new list by evaluating an expression and performing it on each element of another list.
+
+Examples:
+```python
+>>> num_list = [1, 2, 3, 4, 5]
+>>> squares = [x * x for x in num_list]  # List comprehension
+>>> squares
+[1, 4, 9, 16, 25]
+
+```
 
 ---
 
