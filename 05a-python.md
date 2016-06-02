@@ -31,7 +31,7 @@ Examples:
 >>> list(a) 
 [1, 1, 2, 3, 3, 3, 4]  # Notice the duplicates in the list
 >>> set(a) 
-set([1, 2, 3, 4]) # No more duplicates since now a set
+set([1, 2, 3, 4])  # No more duplicates since now a set
 >>> set(a).symmetric_difference(set(b)) 
 set([1, 3, 5])  # Outputs differences between both lists
 ```
@@ -65,15 +65,36 @@ Example:
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> List comprehensions make a new list by evaluating an expression and performing it on each element of another list.
+>> List comprehensions make a new list by evaluating an expression and performing it on each element of a list.
+>> `Map` makes a new list by perfoming a function on each element of a list.
+>> `Filter` makes a new list by performing a function on each element of a list and if true, appends it to the new list.
+
+>> List comprehensions are the preferred method of acheiving the same goal since it is usually easier to read, even though `map` can sometimes be faster.
 
 Examples:
 ```python
 >>> num_list = [1, 2, 3, 4, 5]
->>> squares = [x * x for x in num_list]  # List comprehension
->>> squares
+>>> squares_lc = [x * x for x in num_list]  # List comprehension to get squares
+>>> squares_lc
 [1, 4, 9, 16, 25]
-
+>>> squares_map = map(lambda x: x*x, num_list)  # Same using map & lambda
+>>> squares_map
+[1, 16, 49, 196, 225]
+>>> even_squares = filter(lambda x: x % 2 == 0, squares_map)  # Filter squares by even
+>>> even_squares
+[16, 196]
+>>> [x*x for x in num_list if x%2==0]  # List comprehension with filtering squares by even
+[16, 196]
+>>> map(lambda x: x*x if x**2%2==0 else False, num_list)  # Using map, list of squares that are even and False if odd (Not pretty but shown for comparison to two options above)
+[False, 16, False, 196, False]
+>>>
+>>> alpha_bet = {i+1 : chr(65+i) for i in range(26)}  # Dictionary comprehension
+>>> alpha_bet
+{1: 'A', 2: 'B', 3: 'C', 4: 'D', 5: 'E', 6: 'F', 7: 'G', 8: 'H', 9: 'I', 10: 'J', 11: 'K', 12: 'L', 13: 'M', 14: 'N', 15: 'O', 16: 'P', 17: 'Q', 18: 'R', 19: 'S', 20: 'T', 21: 'U', 22: 'V', 23: 'W', 24: 'X', 25: 'Y', 26: 'Z'}
+>>>
+>>> set_comp = {x*x for x in num_list if x%2==0}  # Set comprehension with filtering squares by even
+>>> set_comp
+set([16, 196])
 ```
 
 ---
