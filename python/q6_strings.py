@@ -18,7 +18,11 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    if count < 10:
+        return 'Number of donuts: %s' % count
+    else:
+        return 'Number of donuts: many'
 
 
 def both_ends(s):
@@ -37,7 +41,12 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    if len(s) > 2:
+        result = s[:2] + s[-2:]
+        return result
+    else:
+        return ""
 
 
 def fix_start(s):
@@ -56,7 +65,19 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    length = len(s)
+    for i in range(length):
+        if i != 0:
+            if s[i] == first_char:
+                next_char = '*'
+            else:
+                next_char = s[i]
+            new_word += next_char
+        else:
+            first_char = s[i]
+            new_word = s[i]
+    return new_word
 
 
 def mix_up(a, b):
@@ -74,7 +95,12 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    s1_chars = a[:2]
+    s2_chars = b[:2]
+    s1 = s2_chars + a[2:]
+    s2 = s1_chars + b[2:]
+    return s1 + " " + s2
 
 
 def verbing(s):
@@ -91,7 +117,16 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    if len(s) >= 3:
+        if s[len(s)-3:] == 'ing':
+            ending = 'ly'
+        else:
+            ending = 'ing'
+        new_word = s + ending
+        return new_word
+    else:
+        return s
 
 
 def not_bad(s):
@@ -111,7 +146,15 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    try:
+        result = s
+        if s.index('not') < s.index('bad'):
+            full_sub = s[s.find('not'):s.find('bad')+3]
+            result = s.replace(full_sub, 'good')
+        return result
+    except ValueError:
+        return s
 
 
 def front_back(a, b):
@@ -130,4 +173,11 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    from math import ceil
+    a_front = a[:int(ceil(len(a)/2.0))]
+    a_back = a[int(ceil(len(a)/2.0)):]
+    b_front = b[:int(ceil(len(b)/2.0))]
+    b_back = b[int(ceil(len(b)/2.0)):]
+    result = a_front + b_front + a_back + b_back
+    return result
