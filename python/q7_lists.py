@@ -15,7 +15,12 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    count = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[-1]:
+            count += 1
+    return count
 
 
 def front_x(words):
@@ -32,7 +37,12 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    words.sort()
+    while words[-1][0] == 'x':
+        last = words.pop()
+        words.insert(0, last)
+    return words
 
 
 def sort_last(tuples):
@@ -49,7 +59,9 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    last_list = sorted(tuples, key=lambda x: x[-1])
+    return last_list
 
 
 def remove_adjacent(nums):
@@ -68,7 +80,14 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    non_adj = []
+    for i in range(len(nums)):
+        if i == 0:
+            non_adj.append(nums[0])
+        elif nums[i] != nums[i-1]:
+            non_adj.append(nums[i])
+    return non_adj
 
 
 def linear_merge(list1, list2):
@@ -85,4 +104,28 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    list1 += list2
+    list1.sort()
+    return list1
+    
+#   TRIED OTHER METHODS 
+
+# def linear_merge(list1, list2):
+#     for i in range(max(len(list1), len(list2))):
+#         while len(list2) > 0:
+#             if list1[i] > list2[0]:
+#                 print list1[i], list2[0], list1[i] < list2[0]
+#                 list1.insert(i, list2.pop())
+#     return list1
+
+# def linear_merge(list1, list2):
+#     x = 0
+#     for i in range(min(len(list1), len(list2))):
+#         print i, range(min(len(list1), len(list2)))
+#         while list1[x] < list2[0]: # for >
+#             print list1[x], list2[0], list1[x] > list2[i]
+#             list1.insert(x, list2[i])
+#             print list1
+#             x += 1
+#     return list1
