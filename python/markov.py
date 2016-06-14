@@ -39,10 +39,13 @@ class Markov(object):
 		new_text = []
 		for x in range(self.size-1):
 			new_text.append(w1)
+			## Debug - Shows choices for next word
+			# print "Choices:", self.word_chain[(w1, w2)]
 			w1, w2 = w2, random.choice( self.word_chain[(w1, w2)] )
-		new_text.append(w2)
+		# Ending - Clean, find word with period, make first letter upper
 		needs_period = True
 		while needs_period:
+			new_text.append(w1)
 			try:
 				w1, w2 = w2, random.choice( filter( lambda x: x[-1]== "." ,self.word_chain[(w1, w2)] ) )
 				needs_period = False
