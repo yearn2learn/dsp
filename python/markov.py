@@ -51,6 +51,7 @@ class Markov(object):
 				needs_period = False
 			except IndexError:
 				w1, w2 = w2, random.choice( self.word_chain[(w1, w2)] )
+		new_text.append(w1)
 		new_text.append(w2)
 		text = " ".join(new_text)
 		text = text[0].upper() + text[1:]
